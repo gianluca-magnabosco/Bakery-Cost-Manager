@@ -1,0 +1,36 @@
+CREATE DATABASE programamae;
+\c programamae;
+
+CREATE TABLE KWh (
+	kwh NUMERIC(5,2)
+);
+
+INSERT INTO KWh VALUES (0.00);
+
+CREATE TABLE horastrabalhadas (
+	valor NUMERIC(5,2)
+);
+
+INSERT INTO horastrabalhadas VALUES (0.00);
+
+
+CREATE TABLE Eletrodomesticos (
+	id SERIAL,
+	nome VARCHAR(200) NOT NULL,
+	potencia INTEGER NOT NULL,
+	preco_hora NUMERIC(5, 2),
+	CONSTRAINT pkEletrodomesticos PRIMARY KEY (id)
+);
+
+
+CREATE TABLE Insumos (
+	id SERIAL,
+	nome VARCHAR(200) NOT NULL,
+	metrica VARCHAR(10) NOT NULL,
+	quantidade INTEGER NOT NULL,
+	preco NUMERIC(12,2) NOT NULL,
+	CONSTRAINT pkInsumos PRIMARY KEY (id)
+);
+
+
+
